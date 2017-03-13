@@ -9,7 +9,7 @@ namespace WalletKata.Wallets
 		private WalletDAO walletDao;
 		private UserSession userSessionInstance = UserSession.GetInstance();
 
-        public List<Wallet> GetWalletsByUser(User user)
+        public List<Wallet> GetWalletsFromFriend(User user)
         {
             List<Wallet> walletList = new List<Wallet>();
             User loggedUser = userSessionInstance.GetLoggedUser();
