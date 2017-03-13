@@ -4,7 +4,7 @@ using WalletKata.Users;
 
 namespace WalletKata.Wallets
 {
-    public class WalletDAO
+    public class WalletDAO: IWalletDAO
     {
         public List<Wallet> FindWalletsByUser(User user)
         {
