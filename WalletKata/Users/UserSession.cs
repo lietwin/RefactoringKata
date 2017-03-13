@@ -6,6 +6,11 @@ namespace WalletKata.Users
     {
         private static readonly UserSession userSession = new UserSession();
 
+		// to enforce thread safety
+		static UserSession(){
+		
+		}
+
         private UserSession() { }
 
         public static UserSession GetInstance()
