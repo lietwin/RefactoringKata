@@ -10,24 +10,17 @@ namespace WalletKata.Wallets
         {
             List<Wallet> walletList = new List<Wallet>();
             User loggedUser = UserSession.GetInstance().GetLoggedUser();
-            bool isFriend = false;
-
+    
             if (loggedUser != null)
             {
                 foreach (User friend in user.GetFriends())
                 {
                     if (friend.Equals(loggedUser))
                     {
-                        isFriend = true;
-                        break;
+                        walletList = WalletDAO.FindWalletsByUser(user);
                     }
                 }
-
-                if (isFriend)
-                {
-                    walletList = WalletDAO.FindWalletsByUser(user);
-                }
-
+              
                 return walletList;
             }
             else
