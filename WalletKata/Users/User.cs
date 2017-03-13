@@ -7,7 +7,7 @@ namespace WalletKata.Users
     {
         private List<User> friends = new List<User>();
 
-        public IEnumerable GetFriends()
+        public IEnumerable<User> GetFriends()
         {
             return friends;
         }
@@ -21,7 +21,8 @@ namespace WalletKata.Users
 		{
 			 foreach (User friend in user.GetFriends())
              {
-				if (friend.Equals(user)){
+				if (friend.Equals(user))
+				{
 					return true;
 				}
 			 }

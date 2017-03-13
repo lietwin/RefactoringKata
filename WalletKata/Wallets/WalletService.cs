@@ -16,7 +16,7 @@ namespace WalletKata.Wallets
     
             if (loggedUser != null && user != null)
             {
-				if(loggedUser.hasFriend(user))
+				if(loggedUser.HasFriend(user))
 				{
 					walletList = walletDao.FindWalletsByUser(user);
                 }
