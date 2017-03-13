@@ -7,17 +7,17 @@ namespace WalletKata.Wallets
     public class WalletService
     {
 		private IWalletDAO walletDao;
-		private IUserSession userSessionInstance;
+		private IUserSession userSession;
 
 		public WalletService(){
 			walletDao = new WalletDAO();
-			userSessionInstance = UserSession.GetInstance()
+			userSession = UserSession.GetInstance()
 		}
 
         public List<Wallet> GetWalletsFromFriend(User user)
         {
             List<Wallet> walletList = new List<Wallet>();
-            User loggedUser = userSessionInstance.GetLoggedUser();
+            User loggedUser = userSession.GetLoggedUser();
     
             if (loggedUser != null && user != null)
             {
