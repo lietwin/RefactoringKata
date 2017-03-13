@@ -16,5 +16,17 @@ namespace WalletKata.Users
         {
             friends.Add(friend);
         }
+
+		public bool HasFriend(User user)
+		{
+			 foreach (User friend in user.GetFriends())
+             {
+				if (friend.Equals(user)){
+					return true;
+				}
+			 }
+
+			 return false;
+		}
     }
 }

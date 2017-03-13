@@ -13,13 +13,11 @@ namespace WalletKata.Wallets
     
             if (loggedUser != null)
             {
-                foreach (User friend in user.GetFriends())
-                {
-                    if (friend.Equals(loggedUser))
-                    {
-                        walletList = WalletDAO.FindWalletsByUser(user);
-                    }
+				if(loggedUser.hasFriend(user))
+				{
+					walletList = WalletDAO.FindWalletsByUser(user);
                 }
+            }
               
                 return walletList;
             }
