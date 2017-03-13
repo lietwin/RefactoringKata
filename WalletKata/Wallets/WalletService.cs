@@ -6,6 +6,8 @@ namespace WalletKata.Wallets
 {
     public class WalletService
     {
+		private WalletDAO walletDao;
+
         public List<Wallet> GetWalletsByUser(User user)
         {
             List<Wallet> walletList = new List<Wallet>();
@@ -15,10 +17,10 @@ namespace WalletKata.Wallets
             {
 				if(loggedUser.hasFriend(user))
 				{
-					walletList = WalletDAO.FindWalletsByUser(user);
+					walletList = walletDao.FindWalletsByUser(user);
                 }
             }
-              
+            
                 return walletList;
             }
             else
