@@ -19,7 +19,7 @@ namespace WalletKata.Users
 
 		public bool HasFriend(User user)
 		{
-			 foreach (User friend in user.GetFriends())
+			 foreach (User friend in friends)
              {
 				if (friend.Equals(user))
 				{
