@@ -20,9 +20,8 @@ namespace WalletKata.Wallets
 				{
 					walletList = walletDao.FindWalletsByUser(user);
                 }
-            }
-            
-                return walletList;
+
+				return walletList;
             }
             else
             {
