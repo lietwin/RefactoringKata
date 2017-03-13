@@ -14,7 +14,7 @@ namespace WalletKata.Wallets
             List<Wallet> walletList = new List<Wallet>();
             User loggedUser = userSessionInstance.GetLoggedUser();
     
-            if (loggedUser != null)
+            if (loggedUser != null && user != null)
             {
 				if(loggedUser.hasFriend(user))
 				{
